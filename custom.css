@@ -1,0 +1,75 @@
+:root {
+    --color-p1:red;
+    --color-p2:green;
+}
+
+footer {
+   width:100vw;
+   padding:1em;
+   text-align: center;
+   position: fixed;
+   bottom:0px;
+   left:0px;
+   z-index:10;
+   background-color:#ffffff;
+}
+
+main {
+    margin-top: 1em;
+    margin-bottom:5em;
+}
+
+.navbar-brand h1{
+    font-size: calc(1rem + 0.5vw);
+}
+
+
+table.ttt{
+    --myWidth: 75%;
+    width: var(--myWidth);
+    border:3px solid var(--bs-blue);
+    float:none;
+    margin:auto;
+    border-collapse: separate;
+    
+    
+}
+table.ttt th {
+    background-color: var(--bs-blue);
+    color:#ffffff;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+table.ttt td {
+    --myWidth: 100px;
+    text-align: center;
+    border: 1px solid var(--bs-blue);
+    text-align:center;
+    font-size: calc( var(--myWidth)/2 + 1px); 
+    vertical-align: middle;
+    cursor: pointer;
+}
+table.ttt td:hover {
+    background-color: rgb(221, 195, 131);
+}
+
+h2 {
+    font-size:1.75rem;
+    margin-top:1rem;
+}
+h2.right {
+    text-align:right;
+    color:var(--color-p1);
+}
+h2.left {
+    text-align:left;
+    color:var(--color-p2);
+}
+h2.center {
+    text-align:center;
+}
+
+#bnr-end{
+    font-size: 1.5em;
+}

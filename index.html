@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE Tech: Week 5 - TicTacToe</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="./custom.css" type="text/css">
+    <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="i-want-a-server.js"></script>
+</head>
+
+<body>
+    <main class="container">
+        <div class="card mb-5" id="intro">
+            <div class="card-body" id="cardIntro">
+                <h1>The assignment</h1>
+                <p>Using any of the tools you’ve worked with so far, create a game of tic-tac-toe.
+                <ol>
+                    <li>A heading should say whether it is X’s or O’s turn and change with each move made.</li>
+                    <li>Create a tic-tac-toe grid using your HTML element of choice. When a cell in the grid is clicked, an X or O should appear in that spot depending on whose turn it is.</li>
+                    <li>A button should be available to clear the grid and restart the game.</li>
+                    <li>When a player has won, or the board is full and the game results in a draw, a Bootstrap banner should appear across the screen announcing the winner.</li>
+                </ol>
+                </p>
+            </div>
+        </div>
+
+        <div class="card" id="cardGame">
+            <div class="card-body">
+
+                <table class="table ttt">
+                    <tr>
+                        <th>Tic</th>
+                        <th>Tac</th>
+                        <th>Toe</th>
+                    </tr>
+                    <tr>
+                        <td data-row="0" data-col="0">&nbsp;</td>
+                        <td data-row="0" data-col="1">&nbsp;</td>
+                        <td data-row="0" data-col="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td data-row="1" data-col="0">&nbsp;</td>
+                        <td data-row="1" data-col="1">&nbsp;</td>
+                        <td data-row="1" data-col="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td data-row="2" data-col="0">&nbsp;</td>
+                        <td data-row="2" data-col="1">&nbsp;</td>
+                        <td data-row="2" data-col="2">&nbsp;</td>
+                    </tr>
+                </table>
+                <h2 id="playerMsg" class="center">Player One, you start.</h2>
+            </div>
+            </div>
+        </div>
+
+    </main>
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./tic-tac-toe.js"></script>
+    <script>
+    // create Game controller object
+    let Game = new TicTacToe( {msgElem:"#playerMsg"});
+    // Configure - set DOM elements to be modified.
+    Game.setMsgElem("#playerMsg");
+    Game.setTableElem("table.table.ttt");
+
+    // Find cells in visible table - set event handlers
+    let cellElems = document.querySelectorAll('table.table.ttt td'); 
+    for (let i=0; i<cellElems.length; i++) {
+        cellElems[i].addEventListener('click', () => {Game.doClick( cellElems[i],"X" )} );
+    }
+
+    </script>
+
+</body>
+
+</html>
